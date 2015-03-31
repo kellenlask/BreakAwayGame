@@ -2,6 +2,7 @@ package com.bk.fm.breakawaygame;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.SurfaceView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -11,7 +12,9 @@ public class MainActivity extends ActionBarActivity {
 //		Fields
 //
 //---------------------------------------------------
+	private int score;
 
+	private SurfaceView drawingSurface;
 
 
 //---------------------------------------------------
@@ -23,6 +26,9 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		initializeFields();
+
 	} //End onCreate
 
 	@Override
@@ -49,6 +55,10 @@ public class MainActivity extends ActionBarActivity {
 //
 //---------------------------------------------------
 	public void initializeFields() {
+		score = 0;
+
+		drawingSurface = (SurfaceView) findViewById(R.id.drawingSurface);
+
 
 	} //End public void initializeFields()
 
