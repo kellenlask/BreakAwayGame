@@ -5,7 +5,7 @@ import android.graphics.Point;
 /**
  * Created by Kellen on 4/3/2015.
  */
-public class CannonBall {
+public class Ball {
 //-------------------------------------------------------
 //
 //		Fields
@@ -22,8 +22,8 @@ public class CannonBall {
 //		Constructors
 //
 //-------------------------------------------------------
-	public CannonBall() {
-		goingUp = false;
+	public Ball() {
+		setGoingUp(false);
 
 		//Randomly generate a good starting position
 
@@ -35,10 +35,39 @@ public class CannonBall {
 //
 //-------------------------------------------------------
 
+	public int getACCELERATION() {
+		return ACCELERATION;
+	}
+
+	public int getSpeed() {
+		return speed;
+	}
+
+	public Point getPosition() {
+		return position;
+	}
+
+	public boolean isGoingUp() {
+		return goingUp;
+	}
+
 
 //-------------------------------------------------------
 //
 //		Mutators
 //
 //-------------------------------------------------------
-}
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+
+	public void setPosition(Point position) {
+		this.position = position;
+	}
+
+	public void setGoingUp(boolean goingUp) {
+		this.goingUp = goingUp;
+	}
+
+
+} //End Class
