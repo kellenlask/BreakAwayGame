@@ -57,7 +57,7 @@ public class MainActivity extends ActionBarActivity {
 	public void initializeFields() {
 		score = 0;
 
-		drawingSurface = (SurfaceView) findViewById(R.id.drawingSurface);
+		//drawingSurface = (SurfaceView) findViewById(R.id.drawingSurface);
 
 
 	} //End public void initializeFields()
