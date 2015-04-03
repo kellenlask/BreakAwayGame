@@ -34,16 +34,6 @@ public class MainActivity extends ActionBarActivity {
 
 	} //End onCreate
 
-	@Override
-	protected void onPause() {
-
-	}
-
-	@Override
-	public void onDestroy() {
-
-	}
-
 //---------------------------------------------------
 //
 //		Logistical Methods

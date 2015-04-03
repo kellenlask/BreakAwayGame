@@ -1,6 +1,7 @@
 package com.bk.fm.breakawaygame;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.view.MotionEvent;
@@ -41,6 +42,7 @@ public class Paddle {
 
 		paint = new Paint();
 		paint.setStrokeWidth(lineWidth);
+		paint.setColor(Color.BLUE);
 	}
 
 
@@ -76,14 +78,6 @@ public class Paddle {
 //		Mutators
 //
 //-----------------------------------------------------------------------
-	public void setLeftSide(Point leftSide) {
-		this.leftSide = leftSide;
-	}
-
-	public void setRightSide(Point rightSide) {
-		this.rightSide = rightSide;
-	}
-
 	public void moveLeft() {
 		int amount = screenWidth / 32;
 
@@ -96,7 +90,7 @@ public class Paddle {
 	public void moveRight() {
 		int amount = screenWidth / 32;
 
-		if(leftSide.x + amount < screenWidth) {
+		if(rightSide.x + amount < screenWidth) {
 			leftSide.x += amount;
 			rightSide.x += amount;
 		}
@@ -104,8 +98,8 @@ public class Paddle {
 
 	public void decrease() {
 		if(getLineWidth() > (screenWidth * 1 / 6)) {
-			leftSide.x -= 2;
-			rightSide.x -= 2;
+			leftSide.x -= 5;
+			rightSide.x -= 5;
 		}
 	}
 
