@@ -238,6 +238,8 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 
 	private void showGameOverDialog()
 	{
+		//TODO: set new high record is applicable.
+
 		dialogIsDisplayed = true;
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
