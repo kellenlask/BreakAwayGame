@@ -5,6 +5,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -26,6 +28,7 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 	//GUI
 	private boolean dialogIsDisplayed;
 	private BreakAwayThread BAThread;
+	private Paint backgroundPaint;
 
 	//Game State
 	private int score;
@@ -51,6 +54,11 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 	// register SurfaceHolder.Callback listener
 		getHolder().addCallback(this);
 
+
+	//Set background paint
+		backgroundPaint.setColor(Color.WHITE);
+
+	//Start Game
 		newGame();
 
 	}
@@ -68,11 +76,18 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 	}
 
 	private void updatePositions(double elapsedTime) {
+		if(!ball.isValid()) {
+			showGameOverDialog();
+		}
+
 
 	}
 
 	private void drawGameElements(Canvas canvas) {
-		
+		canvas.drawRect(0, 0, canvas.getWidth(), canvas.getHeight(), backgroundPaint);
+
+		ball.draw(canvas);
+		paddle.draw(canvas);
 	}
 
 
@@ -221,7 +236,7 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 //
 //-----------------------------------------------------------------------
 
-	private void showGameOverDialog(final int messageId)
+	private void showGameOverDialog()
 	{
 		dialogIsDisplayed = true;
 
