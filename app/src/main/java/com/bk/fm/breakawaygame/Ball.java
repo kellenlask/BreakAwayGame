@@ -133,6 +133,20 @@ public class Ball {
 	}
 
 	public void bounce() {
+		if(position.y <= 0) { //Top
+			yVelocity *= -1;
+		} else if(position.x <= 0) { //Left
+			xVelocity *= -1;
+		} else if(position.x >= screenWidth) { //Right
+			xVelocity *= -1;
+		} else { //Paddle
+			yVelocity *= -1;
+		}
+
+		update();
+	}
+
+	public void update() {
 
 	}
 
