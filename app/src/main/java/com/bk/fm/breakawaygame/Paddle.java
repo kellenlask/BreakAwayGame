@@ -3,6 +3,7 @@ package com.bk.fm.breakawaygame;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.view.MotionEvent;
 
 /**
  * Created by Kellen on 4/2/2015.
@@ -66,6 +67,10 @@ public class Paddle {
 		return lineWidth;
 	}
 
+	public Point getCenter() {
+		return new Point(rightSide.x - leftSide.x, rightSide.y);
+	}
+
 //-----------------------------------------------------------------------
 //
 //		Mutators
@@ -79,20 +84,39 @@ public class Paddle {
 		this.rightSide = rightSide;
 	}
 
-	public void moveLeft(int amount) {
+	public void moveLeft() {
+		int amount = screenWidth / 32;
+
 		if(leftSide.x - amount > 0) {
 			leftSide.x -= amount;
 			rightSide.x -= amount;
 		}
 	}
 
-	public void moveRight(int amount) {
+	public void moveRight() {
+		int amount = screenWidth / 32;
+
 		if(leftSide.x + amount < screenWidth) {
 			leftSide.x += amount;
 			rightSide.x += amount;
 		}
 	}
 
+	public void decrease() {
+		if(getLineWidth() > (screenWidth * 1 / 6)) {
+			leftSide.x -= 2;
+			rightSide.x -= 2;
+		}
+	}
 
+	public void update(MotionEvent event) {
+		Point touchPoint = new Point((int) event.getX(), (int) event.getY());
+		Point center = getCenter();
 
+		if(touchPoint.x < center.x) {
+			moveLeft();
+		} else if(touchPoint.x > center.x) {
+			moveRight();
+		}
+	}
 }

@@ -7,5 +7,6 @@
     <string name="breakout">Break Out</string>
     <string name="play">PLAY</string>
     <string name="highScore">High Score:</string>
+    <string name="title_activity_break">BreakActivity</string>
 
 </resources>

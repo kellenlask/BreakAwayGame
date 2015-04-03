@@ -33,6 +33,7 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 	//Game State
 	private int score;
 	private double totalElapsedTime;
+	private int seconds;
 
 	//Objects
 	private Activity activity;
@@ -54,7 +55,6 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 	// register SurfaceHolder.Callback listener
 		getHolder().addCallback(this);
 
-
 	//Set background paint
 		backgroundPaint.setColor(Color.WHITE);
 
@@ -70,7 +70,6 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 //-----------------------------------------------------------------------
 	public void newGame() {
 		initializeObjects();
-
 		score = 0;
 
 	}
@@ -81,10 +80,20 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 		if(!ball.isValid()) {
 			showGameOverDialog();
 		} else if(ball.isTouchingPaddle(paddle) || ball.isTouchingWall()) {
-			ball.bounce();
+			score++;
+			ball.bounce(interval);
 		} else {
-
+			ball.update(interval);
 		}
+
+		seconds++;
+
+		if(seconds == 20) {
+			paddle.decrease();
+			ball.speedUp();
+			seconds = 0;
+		}
+
 	}
 
 	private void drawGameElements(Canvas canvas) {
@@ -96,10 +105,8 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 
 
 	public void initializeObjects() {
-
 		ball = new Ball(screenWidth, screenHeight);
 		paddle = new Paddle(screenWidth, screenHeight);
-
 
 	}
 
@@ -165,10 +172,8 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 		int action = e.getAction();
 
 		// the user user touched the screen or dragged along the screen
-		if (action == MotionEvent.ACTION_DOWN ||
-				action == MotionEvent.ACTION_MOVE)
-		{
-			//fireCannonball(e); // fire the cannonball toward the touch point
+		if (action == MotionEvent.ACTION_MOVE) {
+			paddle.update(e);
 		}
 
 		return true;

@@ -132,7 +132,12 @@ public class Ball {
 		yVelocity = velocity;
 	}
 
-	public void bounce() {
+	public void speedUp() {
+		xVelocity++;
+		yVelocity++;
+	}
+
+	public void bounce(double interval) {
 		if(position.y <= 0) { //Top
 			yVelocity *= -1;
 		} else if(position.x <= 0) { //Left
@@ -143,11 +148,12 @@ public class Ball {
 			yVelocity *= -1;
 		}
 
-		update();
+		update(interval);
 	}
 
-	public void update() {
-
+	public void update(double interval) {
+		position.x += xVelocity * interval;
+		position.y += yVelocity * interval;
 	}
 
 } //End Class
