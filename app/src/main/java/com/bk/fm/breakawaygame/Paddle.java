@@ -59,6 +59,10 @@ public class Paddle {
 
 	}
 
+	public int getLineWidth() {
+		return lineWidth;
+	}
+
 //-----------------------------------------------------------------------
 //
 //		Mutators
