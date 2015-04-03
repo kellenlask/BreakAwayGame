@@ -76,11 +76,15 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 	}
 
 	private void updatePositions(double elapsedTime) {
+		double interval = elapsedTime / 1000.0;
+
 		if(!ball.isValid()) {
 			showGameOverDialog();
+		} else if(ball.isTouchingPaddle(paddle) || ball.isTouchingWall()) {
+			ball.bounce();
+		} else {
+
 		}
-
-
 	}
 
 	private void drawGameElements(Canvas canvas) {

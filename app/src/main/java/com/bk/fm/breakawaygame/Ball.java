@@ -16,9 +16,9 @@ public class Ball {
 	protected int acceleration;
 	protected int speed;
 	protected Point position;
-	protected boolean goingUp;
-	protected boolean goingLeft;
 	protected Paint paint;
+	protected int xVelocity;
+	protected int yVelocity;
 
 	//Dimensions
 	protected int screenHeight;
@@ -32,7 +32,9 @@ public class Ball {
 //
 //-------------------------------------------------------
 	public Ball(int screenWidth, int screenHeight) {
-		setGoingUp(false);
+		yVelocity = 3;
+		xVelocity = 3;
+
 		paint = new Paint();
 
 		this.screenHeight = screenHeight;
@@ -52,7 +54,7 @@ public class Ball {
 //
 //-------------------------------------------------------
 
-	public int getACCELERATION() {
+	public int getAcceleration() {
 		return acceleration;
 	}
 
@@ -64,12 +66,12 @@ public class Ball {
 		return position;
 	}
 
-	public boolean isGoingUp() {
-		return goingUp;
+	public int getXVelocity() {
+		return xVelocity;
 	}
 
-	public boolean isGoingLeft() {
-		return goingLeft;
+	public int getYVelocity() {
+		return yVelocity;
 	}
 
 	public Paint getPaint() {
@@ -118,16 +120,20 @@ public class Ball {
 		this.position = position;
 	}
 
-	public void setGoingUp(boolean goingUp) {
-		this.goingUp = goingUp;
-	}
-
-	public void setGoingLeft(boolean goingLeft) {
-		this.goingLeft = goingLeft;
-	}
-
 	public void setPaint(Paint paint) {
 		this.paint = paint;
+	}
+
+	public void setXVelocity(int velocity) {
+		xVelocity = velocity;
+	}
+
+	public void setYVelocity(int velocity) {
+		yVelocity = velocity;
+	}
+
+	public void bounce() {
+
 	}
 
 } //End Class

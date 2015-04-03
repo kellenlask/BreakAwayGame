@@ -30,7 +30,7 @@
             <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/MainActivity.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0" vertical-offset="418" max-vertical-offset="1463">
+                  <state vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="2100">
                     <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
                     <folding />
                   </state>
@@ -40,44 +40,43 @@
             <file leaf-file-name="GameActivity.java" pinned="false" current="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/GameActivity.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2736">
+                  <state vertical-scroll-proportion="0.0" vertical-offset="1050" max-vertical-offset="4075">
                     <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
                     <folding />
                   </state>
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="Ball.java" pinned="false" current="false" current-in-tab="false">
+            <file leaf-file-name="Ball.java" pinned="false" current="true" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Ball.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0" vertical-offset="209" max-vertical-offset="2641">
-                    <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+                  <state vertical-scroll-proportion="0.4518589" vertical-offset="2476" max-vertical-offset="3625">
+                    <caret line="118" column="45" selection-start-line="118" selection-start-column="45" selection-end-line="118" selection-end-column="45" />
                     <folding>
                       <element signature="imports" expanded="true" />
-                      <element signature="e#1197#1198#0" expanded="true" />
-                      <element signature="e#1223#1224#0" expanded="true" />
-                      <element signature="e#1249#1250#0" expanded="true" />
-                      <element signature="e#1268#1269#0" expanded="true" />
-                      <element signature="e#1299#1300#0" expanded="true" />
-                      <element signature="e#1321#1322#0" expanded="true" />
-                      <element signature="e#1352#1353#0" expanded="true" />
-                      <element signature="e#1373#1374#0" expanded="true" />
-                      <element signature="e#1406#1407#0" expanded="true" />
-                      <element signature="e#1429#1430#0" expanded="true" />
-                      <element signature="e#1457#1458#0" expanded="true" />
-                      <element signature="e#1476#1477#0" expanded="true" />
-                      <element signature="e#1605#1606#0" expanded="true" />
-                      <element signature="e#1644#1645#0" expanded="true" />
-                      <element signature="e#2343#2344#0" expanded="true" />
-                      <element signature="e#2368#2369#0" expanded="true" />
-                      <element signature="e#2412#2413#0" expanded="true" />
-                      <element signature="e#2443#2444#0" expanded="true" />
+                      <element signature="e#1205#1206#0" expanded="true" />
+                      <element signature="e#1231#1232#0" expanded="true" />
+                      <element signature="e#1257#1258#0" expanded="true" />
+                      <element signature="e#1276#1277#0" expanded="true" />
+                      <element signature="e#1307#1308#0" expanded="true" />
+                      <element signature="e#1329#1330#0" expanded="true" />
+                      <element signature="e#1359#1360#0" expanded="true" />
+                      <element signature="e#1382#1383#0" expanded="true" />
+                      <element signature="e#1412#1413#0" expanded="true" />
+                      <element signature="e#1435#1436#0" expanded="true" />
+                      <element signature="e#1463#1464#0" expanded="true" />
+                      <element signature="e#1482#1483#0" expanded="true" />
+                      <element signature="e#1611#1612#0" expanded="true" />
+                      <element signature="e#1650#1651#0" expanded="true" />
+                      <element signature="e#2349#2350#0" expanded="true" />
+                      <element signature="e#2374#2375#0" expanded="true" />
+                      <element signature="e#2449#2450#0" expanded="true" />
                       <element signature="e#2487#2488#0" expanded="true" />
-                      <element signature="e#2516#2517#0" expanded="true" />
-                      <element signature="e#2564#2565#0" expanded="true" />
-                      <element signature="e#2597#2598#0" expanded="true" />
-                      <element signature="e#2635#2636#0" expanded="true" />
-                      <element signature="e#2660#2661#0" expanded="true" />
+                      <element signature="e#2512#2513#0" expanded="true" />
+                      <element signature="e#2555#2556#0" expanded="true" />
+                      <element signature="e#2582#2583#0" expanded="true" />
+                      <element signature="e#2625#2626#0" expanded="true" />
+                      <element signature="e#2652#2653#0" expanded="true" />
                     </folding>
                   </state>
                 </provider>
@@ -86,39 +85,26 @@
             <file leaf-file-name="Paddle.java" pinned="false" current="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Paddle.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0" vertical-offset="1009" max-vertical-offset="1976">
-                    <caret line="91" column="25" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
-                    <folding>
-                      <element signature="imports" expanded="true" />
-                      <element signature="e#1248#1249#0" expanded="true" />
-                      <element signature="e#1270#1271#0" expanded="true" />
-                      <element signature="e#1302#1303#0" expanded="true" />
-                      <element signature="e#1325#1326#0" expanded="true" />
-                      <element signature="e#1471#1472#0" expanded="true" />
-                      <element signature="e#1494#1495#0" expanded="true" />
-                      <element signature="e#1705#1706#0" expanded="true" />
-                      <element signature="e#1736#1737#0" expanded="true" />
-                      <element signature="e#1782#1783#0" expanded="true" />
-                      <element signature="e#1815#1816#0" expanded="true" />
-                    </folding>
+                  <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2300">
+                    <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+                    <folding />
                   </state>
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="BreakAway.java" pinned="false" current="true" current-in-tab="true">
+            <file leaf-file-name="BreakAway.java" pinned="false" current="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/BreakAway.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.20236814" vertical-offset="4106" max-vertical-offset="5130">
-                    <caret line="233" column="2" selection-start-line="233" selection-start-column="2" selection-end-line="233" selection-end-column="2" />
+                  <state vertical-scroll-proportion="0.0" vertical-offset="1900" max-vertical-offset="7025">
+                    <caret line="83" column="26" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
                     <folding>
                       <element signature="imports" expanded="true" />
-                      <element signature="method#onSizeChanged#0;class#BreakAway#0" expanded="false" />
-                      <element signature="e#4612#4613#0" expanded="true" />
-                      <element signature="e#4646#4647#0" expanded="true" />
-                      <element signature="e#6244#6442#0" expanded="true" />
-                      <element signature="e#6437#6438#0" expanded="true" />
-                      <element signature="e#6483#6627#0" expanded="true" />
-                      <element signature="e#6622#6623#0" expanded="true" />
+                      <element signature="e#4753#4754#0" expanded="true" />
+                      <element signature="e#4787#4788#0" expanded="true" />
+                      <element signature="e#6385#6583#0" expanded="true" />
+                      <element signature="e#6578#6579#0" expanded="true" />
+                      <element signature="e#6624#6768#0" expanded="true" />
+                      <element signature="e#6763#6764#0" expanded="true" />
                     </folding>
                   </state>
                 </provider>
@@ -135,13 +121,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="activity_main.xml" pinned="false" current="false" current-in-tab="true">
+      <file leaf-file-name="activity_main.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
           <provider selected="true" editor-type-id="android-designer">
             <state />
           </provider>
           <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="627">
+            <state vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="825">
               <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
@@ -151,18 +137,18 @@
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.08" vertical-offset="0" max-vertical-offset="304">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="400">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="722">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5393635" vertical-offset="353" max-vertical-offset="950">
+              <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -1382,16 +1368,14 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Paddle.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Ball.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/BreakAway.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Ball.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1911" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1098" />
+    <option name="width" value="960" />
+    <option name="height" value="1152" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -1419,31 +1403,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BreakAwayGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BreakAwayGame" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1700,6 +1659,31 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BreakAwayGame" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BreakAwayGame" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1893,12 +1877,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1911" y="-9" width="1938" height="1098" extended-state="7" />
+    <frame x="0" y="0" width="960" height="1152" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869378" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32793522" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1911,7 +1895,7 @@
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31023455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.64810693" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1976,6 +1960,82 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="825">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="475">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="775" max-vertical-offset="950">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="2100">
+          <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/GameActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1050" max-vertical-offset="4075">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Ball.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1205#1206#0" expanded="true" />
+            <element signature="e#1231#1232#0" expanded="true" />
+            <element signature="e#1257#1258#0" expanded="true" />
+            <element signature="e#1276#1277#0" expanded="true" />
+            <element signature="e#1307#1308#0" expanded="true" />
+            <element signature="e#1329#1330#0" expanded="true" />
+            <element signature="e#1359#1360#0" expanded="true" />
+            <element signature="e#1382#1383#0" expanded="true" />
+            <element signature="e#1412#1413#0" expanded="true" />
+            <element signature="e#1435#1436#0" expanded="true" />
+            <element signature="e#1463#1464#0" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1611#1612#0" expanded="true" />
+            <element signature="e#1650#1651#0" expanded="true" />
+            <element signature="e#2349#2350#0" expanded="true" />
+            <element signature="e#2374#2375#0" expanded="true" />
+            <element signature="e#2449#2450#0" expanded="true" />
+            <element signature="e#2487#2488#0" expanded="true" />
+            <element signature="e#2512#2513#0" expanded="true" />
+            <element signature="e#2555#2556#0" expanded="true" />
+            <element signature="e#2582#2583#0" expanded="true" />
+            <element signature="e#2625#2626#0" expanded="true" />
+            <element signature="e#2652#2653#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1349">
@@ -2171,16 +2231,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.08" vertical-offset="0" max-vertical-offset="304">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="400">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/GameActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="722">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2736">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2198,79 +2258,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Paddle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1009" max-vertical-offset="1976">
-          <caret line="91" column="25" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1248#1249#0" expanded="true" />
-            <element signature="e#1270#1271#0" expanded="true" />
-            <element signature="e#1302#1303#0" expanded="true" />
-            <element signature="e#1325#1326#0" expanded="true" />
-            <element signature="e#1471#1472#0" expanded="true" />
-            <element signature="e#1494#1495#0" expanded="true" />
-            <element signature="e#1705#1706#0" expanded="true" />
-            <element signature="e#1736#1737#0" expanded="true" />
-            <element signature="e#1782#1783#0" expanded="true" />
-            <element signature="e#1815#1816#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2300">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Ball.java">
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="209" max-vertical-offset="2641">
-          <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1197#1198#0" expanded="true" />
-            <element signature="e#1223#1224#0" expanded="true" />
-            <element signature="e#1249#1250#0" expanded="true" />
-            <element signature="e#1268#1269#0" expanded="true" />
-            <element signature="e#1299#1300#0" expanded="true" />
-            <element signature="e#1321#1322#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
-            <element signature="e#1373#1374#0" expanded="true" />
-            <element signature="e#1406#1407#0" expanded="true" />
-            <element signature="e#1429#1430#0" expanded="true" />
-            <element signature="e#1457#1458#0" expanded="true" />
-            <element signature="e#1476#1477#0" expanded="true" />
-            <element signature="e#1605#1606#0" expanded="true" />
-            <element signature="e#1644#1645#0" expanded="true" />
-            <element signature="e#2343#2344#0" expanded="true" />
-            <element signature="e#2368#2369#0" expanded="true" />
-            <element signature="e#2412#2413#0" expanded="true" />
-            <element signature="e#2443#2444#0" expanded="true" />
-            <element signature="e#2487#2488#0" expanded="true" />
-            <element signature="e#2516#2517#0" expanded="true" />
-            <element signature="e#2564#2565#0" expanded="true" />
-            <element signature="e#2597#2598#0" expanded="true" />
-            <element signature="e#2635#2636#0" expanded="true" />
-            <element signature="e#2660#2661#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/GameActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2736">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5393635" vertical-offset="353" max-vertical-offset="950">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/BreakAway.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20236814" vertical-offset="4106" max-vertical-offset="5130">
-          <caret line="233" column="2" selection-start-line="233" selection-start-column="2" selection-end-line="233" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1900" max-vertical-offset="7025">
+          <caret line="83" column="26" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onSizeChanged#0;class#BreakAway#0" expanded="false" />
-            <element signature="e#4612#4613#0" expanded="true" />
-            <element signature="e#4646#4647#0" expanded="true" />
-            <element signature="e#6244#6442#0" expanded="true" />
-            <element signature="e#6437#6438#0" expanded="true" />
-            <element signature="e#6483#6627#0" expanded="true" />
-            <element signature="e#6622#6623#0" expanded="true" />
+            <element signature="e#4753#4754#0" expanded="true" />
+            <element signature="e#4787#4788#0" expanded="true" />
+            <element signature="e#6385#6583#0" expanded="true" />
+            <element signature="e#6578#6579#0" expanded="true" />
+            <element signature="e#6624#6768#0" expanded="true" />
+            <element signature="e#6763#6764#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Ball.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4518589" vertical-offset="2476" max-vertical-offset="3625">
+          <caret line="118" column="45" selection-start-line="118" selection-start-column="45" selection-end-line="118" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1205#1206#0" expanded="true" />
+            <element signature="e#1231#1232#0" expanded="true" />
+            <element signature="e#1257#1258#0" expanded="true" />
+            <element signature="e#1276#1277#0" expanded="true" />
+            <element signature="e#1307#1308#0" expanded="true" />
+            <element signature="e#1329#1330#0" expanded="true" />
+            <element signature="e#1359#1360#0" expanded="true" />
+            <element signature="e#1382#1383#0" expanded="true" />
+            <element signature="e#1412#1413#0" expanded="true" />
+            <element signature="e#1435#1436#0" expanded="true" />
+            <element signature="e#1463#1464#0" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1611#1612#0" expanded="true" />
+            <element signature="e#1650#1651#0" expanded="true" />
+            <element signature="e#2349#2350#0" expanded="true" />
+            <element signature="e#2374#2375#0" expanded="true" />
+            <element signature="e#2449#2450#0" expanded="true" />
+            <element signature="e#2487#2488#0" expanded="true" />
+            <element signature="e#2512#2513#0" expanded="true" />
+            <element signature="e#2555#2556#0" expanded="true" />
+            <element signature="e#2582#2583#0" expanded="true" />
+            <element signature="e#2625#2626#0" expanded="true" />
+            <element signature="e#2652#2653#0" expanded="true" />
           </folding>
         </state>
       </provider>
