@@ -55,8 +55,8 @@
       <file leaf-file-name="CannonBall.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/CannonBall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3582395" vertical-offset="0" max-vertical-offset="1025">
-              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.5885363" vertical-offset="50" max-vertical-offset="1250">
+              <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -2112,8 +2112,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/CannonBall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3582395" vertical-offset="0" max-vertical-offset="1025">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.5885363" vertical-offset="50" max-vertical-offset="1250">
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
           <folding />
         </state>
       </provider>
