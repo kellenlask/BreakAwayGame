@@ -1,12 +1,10 @@
 package com.bk.fm.breakawaygame;
 
+import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Canvas;
-import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -34,6 +32,7 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 	private double totalElapsedTime;
 
 	//Objects
+	private Activity activity;
 	private Context context;
 	private Ball ball;
 	private Paddle paddle;
@@ -47,11 +46,12 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 	//Sort out the Activity stuff
 		super(context, attrs);
 		this.context = context;
+		activity = (Activity) context;
 
 	// register SurfaceHolder.Callback listener
 		getHolder().addCallback(this);
 
-		startGame();
+		newGame();
 
 	}
 
@@ -60,7 +60,7 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 //		Logistical Methods
 //
 //-----------------------------------------------------------------------
-	public void startGame() {
+	public void newGame() {
 		initializeObjects();
 
 		score = 0;
@@ -72,13 +72,11 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 	}
 
 	private void drawGameElements(Canvas canvas) {
-
+		
 	}
 
 
 	public void initializeObjects() {
-		screenHeight =
-		screenWidth =
 
 		ball = new Ball(screenWidth, screenHeight);
 		paddle = new Paddle(screenWidth, screenHeight);
@@ -98,7 +96,7 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 		screenWidth = w;
 		screenHeight = h;
 
-		startGame();
+		newGame();
 	}
 
 	// called when surface is first created
@@ -225,50 +223,32 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 
 	private void showGameOverDialog(final int messageId)
 	{
-		// DialogFragment to display quiz stats and start new quiz
-		final DialogFragment gameResult =
-				new DialogFragment()
-				{
-					// create an AlertDialog and return it
-					@Override
-					public Dialog onCreateDialog(Bundle bundle)
-					{
-						// create dialog displaying String resource for messageId
-						AlertDialog.Builder builder =
-								new AlertDialog.Builder(getActivity());
-						builder.setTitle(getResources().getString(messageId));
+		dialogIsDisplayed = true;
 
-						// display number of shots fired and total time elapsed
-						builder.setMessage(getResources().getString(
-								R.string.results_format, score, totalElapsedTime));
-						builder.setPositiveButton(R.string.reset_game,
-								new DialogInterface.OnClickListener()
-								{
-									// called when "Reset Game" Button is pressed
-									@Override
-									public void onClick(DialogInterface dialog, int which)
-									{
-										dialogIsDisplayed = false;
-										newGame(); // set up and start a new game
-									}
-								} // end anonymous inner class
-						); // end call to setPositiveButton
+		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+		builder.setTitle("Game Over");
 
-						return builder.create(); // return the AlertDialog
-					} // end method onCreateDialog
-				}; // end DialogFragment anonymous inner class
+		// display number of shots fired and total time elapsed
+		builder.setMessage("Your Score: " + score + ".");
 
-		// in GUI thread, use FragmentManager to display the DialogFragment
-		activity.runOnUiThread(
-				new Runnable() {
-					public void run()
-					{
-						dialogIsDisplayed = true;
-						gameResult.setCancelable(false); // modal dialog
-						gameResult.show(activity.getFragmentManager(), "results");
-					}
-				} // end Runnable
-		); // end call to runOnUiThread
+		// Set up the buttons
+		builder.setPositiveButton("New Game", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialogIsDisplayed = false;
+				newGame(); // set up and start a new game
+			}
+		});
+		builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				activity.finish();
+			}
+		});
+
+		//Show the dialog
+		builder.show();
+
 	} // end method showGameOverDialog
 
 } //End Class

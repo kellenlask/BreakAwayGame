@@ -20,6 +20,7 @@ public class Paddle {
 	//Relative Values
 	protected int Ycoord;
 	protected int lineWidth;
+	protected int screenWidth;
 
 //-----------------------------------------------------------------------
 //
@@ -27,6 +28,8 @@ public class Paddle {
 //
 //-----------------------------------------------------------------------
 	public Paddle(int screenWidth, int screenHeight) {
+		this.screenWidth = screenWidth;
+
 		//Set Relative Values
 		Ycoord = screenHeight * 7 / 8;
 
@@ -74,6 +77,20 @@ public class Paddle {
 
 	public void setRightSide(Point rightSide) {
 		this.rightSide = rightSide;
+	}
+
+	public void moveLeft(int amount) {
+		if(leftSide.x - amount > 0) {
+			leftSide.x -= amount;
+			rightSide.x -= amount;
+		}
+	}
+
+	public void moveRight(int amount) {
+		if(leftSide.x + amount < screenWidth) {
+			leftSide.x += amount;
+			rightSide.x += amount;
+		}
 	}
 
 
