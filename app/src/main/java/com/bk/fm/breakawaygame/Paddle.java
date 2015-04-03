@@ -1,5 +1,6 @@
 package com.bk.fm.breakawaygame;
 
+import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Point;
 
@@ -12,19 +13,30 @@ public class Paddle {
 //		Fields
 //
 //-----------------------------------------------------------------------
-	private Point leftSide;
-	private Point rightSide;
+	protected Point leftSide;
+	protected Point rightSide;
 	protected Paint paint;
+
+	//Relative Values
+	protected int Ycoord;
+	protected int lineWidth;
 
 //-----------------------------------------------------------------------
 //
 //		Constructor
 //
 //-----------------------------------------------------------------------
-	public Paddle() {
+	public Paddle(int screenWidth, int screenHeight) {
+		//Set Relative Values
+		Ycoord = screenHeight * 7 / 8;
+
+
+		leftSide = new Point(screenWidth / 3, Ycoord);
+		rightSide = new Point(screenWidth * 2 / 3, Ycoord);
+		lineWidth = screenHeight / 16;
+
 		paint = new Paint();
-
-
+		paint.setStrokeWidth(lineWidth);
 	}
 
 
@@ -42,6 +54,10 @@ public class Paddle {
 		return rightSide;
 	}
 
+	public void draw(Canvas canvas) {
+		canvas.drawLine(leftSide.x, leftSide.y, rightSide.x, rightSide.y, paint);
+
+	}
 
 //-----------------------------------------------------------------------
 //

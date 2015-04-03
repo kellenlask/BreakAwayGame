@@ -1,5 +1,6 @@
 package com.bk.fm.breakawaygame;
 
+import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Point;
 
@@ -12,11 +13,14 @@ public class Ball {
 //		Fields
 //
 //-------------------------------------------------------
-	protected final int ACCELERATION = 3;
+	protected int acceleration;
 	protected int speed;
 	protected Point position;
 	protected boolean goingUp;
 	protected Paint paint;
+
+	//Dimensions
+	protected int radius;
 
 
 //-------------------------------------------------------
@@ -24,9 +28,13 @@ public class Ball {
 //		Constructors
 //
 //-------------------------------------------------------
-	public Ball() {
+	public Ball(int screenWidth, int screenHeight) {
 		setGoingUp(false);
 		paint = new Paint();
+
+		//Set relative values
+		acceleration = screenWidth * 3 / 2;
+		radius = screenWidth / 36;
 
 		//Randomly generate a good starting position
 
@@ -39,7 +47,7 @@ public class Ball {
 //-------------------------------------------------------
 
 	public int getACCELERATION() {
-		return ACCELERATION;
+		return acceleration;
 	}
 
 	public int getSpeed() {
@@ -52,6 +60,11 @@ public class Ball {
 
 	public boolean isGoingUp() {
 		return goingUp;
+	}
+
+	public void draw(Canvas canvas) {
+		canvas.drawCircle(position.y, position.x, radius, paint);
+
 	}
 
 

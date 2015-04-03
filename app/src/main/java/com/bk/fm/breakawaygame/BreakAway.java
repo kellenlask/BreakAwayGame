@@ -60,21 +60,13 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 	}
 
 	private void drawGameElements(Canvas canvas) {
-		drawBall();
-		drawPaddle();
-	}
-
-	public void drawBall() {
 
 	}
 
-	public void drawPaddle() {
-
-	}
 
 	public void initializeObjects() {
-		ball = new Ball();
-		paddle = new Paddle();
+		ball = new Ball(screenWidth, screenHeight);
+		paddle = new Paddle(screenWidth, screenHeight);
 
 
 	}
