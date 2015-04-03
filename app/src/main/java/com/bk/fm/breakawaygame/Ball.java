@@ -1,5 +1,6 @@
 package com.bk.fm.breakawaygame;
 
+import android.graphics.Paint;
 import android.graphics.Point;
 
 /**
@@ -15,6 +16,7 @@ public class Ball {
 	protected int speed;
 	protected Point position;
 	protected boolean goingUp;
+	protected Paint paint;
 
 
 //-------------------------------------------------------
@@ -24,6 +26,7 @@ public class Ball {
 //-------------------------------------------------------
 	public Ball() {
 		setGoingUp(false);
+		paint = new Paint();
 
 		//Randomly generate a good starting position
 

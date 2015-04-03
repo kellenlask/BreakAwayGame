@@ -37,33 +37,49 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="Ball.java" pinned="false" current="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Ball.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1235">
-                    <caret line="0" column="32" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
             <file leaf-file-name="GameActivity.java" pinned="false" current="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/GameActivity.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0" vertical-offset="1123" max-vertical-offset="2736">
-                    <caret line="49" column="56" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="56" />
+                  <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="2736">
+                    <caret line="46" column="41" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
                     <folding />
                   </state>
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="BreakAway.java" pinned="false" current="true" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/BreakAway.java">
+            <file leaf-file-name="Ball.java" pinned="false" current="true" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Ball.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.26587728" vertical-offset="0" max-vertical-offset="1976">
-                    <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+                  <state vertical-scroll-proportion="0.5522067" vertical-offset="19" max-vertical-offset="1292">
+                    <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="28" />
                     <folding>
                       <element signature="imports" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="Paddle.java" pinned="false" current="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Paddle.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="1121">
+                    <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="BreakAway.java" pinned="false" current="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/BreakAway.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="4123">
+                    <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                      <element signature="e#4038#4039#0" expanded="true" />
+                      <element signature="e#4072#4073#0" expanded="true" />
                     </folding>
                   </state>
                 </provider>
@@ -80,7 +96,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="activity_main.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="activity_main.xml" pinned="false" current="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
           <provider selected="true" editor-type-id="android-designer">
             <state />
@@ -89,25 +105,6 @@
             <state vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="627">
               <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Paddle.java" pinned="false" current="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Paddle.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64309394" vertical-offset="178" max-vertical-offset="1197">
-              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding>
-                <element signature="e#738#739#0" expanded="true" />
-                <element signature="e#760#761#0" expanded="true" />
-                <element signature="e#792#793#0" expanded="true" />
-                <element signature="e#815#816#0" expanded="true" />
-                <element signature="e#1027#1028#0" expanded="true" />
-                <element signature="e#1058#1059#0" expanded="true" />
-                <element signature="e#1104#1105#0" expanded="true" />
-                <element signature="e#1137#1138#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -1343,11 +1340,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/CannonBall.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/GameActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Ball.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Paddle.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/BreakAway.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Ball.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Paddle.java" />
       </list>
     </option>
   </component>
@@ -1852,7 +1849,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1911" y="-9" width="1938" height="1098" extended-state="6" />
+    <frame x="1911" y="-9" width="1938" height="1098" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1870,7 +1867,7 @@
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31023455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31023455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2136,26 +2133,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Ball.java">
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1235">
-          <caret line="0" column="32" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="722">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/GameActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1123" max-vertical-offset="2736">
-          <caret line="49" column="56" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="722">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="2736">
+          <caret line="46" column="41" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -2171,27 +2160,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Paddle.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/BreakAway.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64309394" vertical-offset="178" max-vertical-offset="1197">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="4123">
+          <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
           <folding>
-            <element signature="e#738#739#0" expanded="true" />
-            <element signature="e#760#761#0" expanded="true" />
-            <element signature="e#792#793#0" expanded="true" />
-            <element signature="e#815#816#0" expanded="true" />
-            <element signature="e#1027#1028#0" expanded="true" />
-            <element signature="e#1058#1059#0" expanded="true" />
-            <element signature="e#1104#1105#0" expanded="true" />
-            <element signature="e#1137#1138#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#4038#4039#0" expanded="true" />
+            <element signature="e#4072#4073#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/BreakAway.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Paddle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26587728" vertical-offset="0" max-vertical-offset="1976">
-          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="1121">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/bk/fm/breakawaygame/Ball.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5522067" vertical-offset="19" max-vertical-offset="1292">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

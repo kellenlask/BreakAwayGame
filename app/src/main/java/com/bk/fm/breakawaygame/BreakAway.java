@@ -1,6 +1,7 @@
 package com.bk.fm.breakawaygame;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -15,6 +16,18 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 //		Fields
 //
 //-----------------------------------------------------------------------
+	//Screen Dimensions
+	private int screenWidth;
+	private int screenHeight;
+
+	//GUI
+	private boolean dialogIsDisplayed;
+	private BreakAwayThread BAThread;
+
+	//Game State
+	private double totalElapsedTime;
+
+	//Objects
 	private Context context;
 	private Ball ball;
 	private Paddle paddle;
@@ -32,6 +45,37 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 	// register SurfaceHolder.Callback listener
 		getHolder().addCallback(this);
 
+	//Setup initial game state
+		initializeObjects();
+
+	}
+
+//-----------------------------------------------------------------------
+//
+//		Logistical Methods
+//
+//-----------------------------------------------------------------------
+	private void updatePositions(double elapsedTime) {
+
+	}
+
+	private void drawGameElements(Canvas canvas) {
+		drawBall();
+		drawPaddle();
+	}
+
+	public void drawBall() {
+
+	}
+
+	public void drawPaddle() {
+
+	}
+
+	public void initializeObjects() {
+		ball = new Ball();
+		paddle = new Paddle();
+
 
 	}
 
@@ -40,15 +84,24 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 //		SurfaceView Methods
 //
 //-----------------------------------------------------------------------
+	@Override
+	public void onSizeChanged(int w, int h, int oldw, int oldh) {
+		super.onSizeChanged(w, h, oldw, oldh);
+
+
+
+
+	}
+
 	// called when surface is first created
 	@Override
 	public void surfaceCreated(SurfaceHolder holder)
 	{
 		if (!dialogIsDisplayed)
 		{
-			cannonThread = new CannonThread(holder); // create thread
-			cannonThread.setRunning(true); // start game running
-			cannonThread.start(); // start the game loop thread
+			BreakAwayThread BAThread = new BreakAwayThread(holder); // create thread
+			BAThread.setRunning(true); // start game running
+			BAThread.start(); // start the game loop thread
 		}
 	}
 
@@ -63,18 +116,18 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 	{
 		// ensure that thread terminates properly
 		boolean retry = true;
-		cannonThread.setRunning(false); // terminate cannonThread
+		BAThread.setRunning(false); // terminate cannonThread
 
 		while (retry)
 		{
 			try
 			{
-				cannonThread.join(); // wait for cannonThread to finish
+				BAThread.join(); // wait for cannonThread to finish
 				retry = false;
 			}
 			catch (InterruptedException e)
 			{
-				System.out.println("(KELLEN) Thread Interrupted.")
+				System.out.println("(KELLEN) Thread Interrupted.");
 			}
 		}
 	} // end method surfaceDestroyed
@@ -90,9 +143,69 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 		if (action == MotionEvent.ACTION_DOWN ||
 				action == MotionEvent.ACTION_MOVE)
 		{
-			fireCannonball(e); // fire the cannonball toward the touch point
+			//fireCannonball(e); // fire the cannonball toward the touch point
 		}
 
 		return true;
 	} // end method onTouchEvent
-}
+
+//-----------------------------------------------------------------------
+//
+//		Thread Subclass
+//
+//-----------------------------------------------------------------------
+
+	// Thread subclass to control the game loop
+	private class BreakAwayThread extends Thread {
+		private SurfaceHolder surfaceHolder; // for manipulating canvas
+		private boolean threadIsRunning = true; // running by default
+
+		// initializes the surface holder
+		public BreakAwayThread(SurfaceHolder holder)
+		{
+			surfaceHolder = holder;
+			setName("BreakAwayThread");
+		}
+
+		// changes running state
+		public void setRunning(boolean running)
+		{
+			threadIsRunning = running;
+		}
+
+		// controls the game loop
+		@Override
+		public void run()
+		{
+			Canvas canvas = null; // used for drawing
+			long previousFrameTime = System.currentTimeMillis();
+
+			while (threadIsRunning)
+			{
+				try
+				{
+					// get Canvas for exclusive drawing from this thread
+					canvas = surfaceHolder.lockCanvas(null);
+
+					// lock the surfaceHolder for drawing
+					synchronized(surfaceHolder)
+					{
+						long currentTime = System.currentTimeMillis();
+						double elapsedTimeMS = currentTime - previousFrameTime;
+						totalElapsedTime += elapsedTimeMS / 1000.0;
+						updatePositions(elapsedTimeMS); // update game state
+						drawGameElements(canvas); // draw using the canvas
+						previousFrameTime = currentTime; // update previous time
+					}
+				}
+				finally
+				{
+					// display canvas's contents on the CannonView
+					// and enable other threads to use the Canvas
+					if (canvas != null)
+						surfaceHolder.unlockCanvasAndPost(canvas);
+				}
+			} // end while
+		} // end method run
+	} //End Hidden Class
+} //End Class
