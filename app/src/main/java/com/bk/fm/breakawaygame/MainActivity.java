@@ -1,10 +1,13 @@
 package com.bk.fm.breakawaygame;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -17,7 +20,7 @@ public class MainActivity extends ActionBarActivity {
 	private int score;
 
 	private Button playButton;
-
+	private TextView highScore;
 
 //---------------------------------------------------
 //
@@ -56,12 +59,13 @@ public class MainActivity extends ActionBarActivity {
 //
 //---------------------------------------------------
 	public void initializeFields() {
-		score = 0;
+		SharedPreferences sp = getSharedPreferences("your_prefs", Activity.MODE_PRIVATE);
+		int currentHighScore = sp.getInt("highScore", 0);
 
+		highScore = (TextView) findViewById(R.id.highScore);
 		playButton = (Button) findViewById(R.id.playButton);
 
-		//drawingSurface = (SurfaceView) findViewById(R.id.drawingSurface);
-
+		highScore.setText(highScore.getText().toString() + " " + currentHighScore);
 
 	} //End public void initializeFields()
 

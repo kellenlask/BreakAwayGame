@@ -6,11 +6,16 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.util.SparseIntArray;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -28,15 +33,18 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 	private int screenWidth;
 	private int screenHeight;
 
-	//GUI
+	//UI
 	private boolean dialogIsDisplayed;
 	private BreakAwayThread BAThread;
 	private Paint backgroundPaint;
+	private SoundPool soundPool;
+	private SparseIntArray soundMap;
 
 	//Game State
+	private int currentHighScore;
 	private int score;
 	private double totalElapsedTime;
-	private int seconds;
+	private double seconds;
 
 	//Objects
 	private Activity activity;
@@ -58,6 +66,11 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 	// register SurfaceHolder.Callback listener
 		getHolder().addCallback(this);
 
+	//Handle Sound
+		soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
+		soundMap = new SparseIntArray(1);
+		soundMap.put(0, soundPool.load(context, R.raw.bounce, 1));
+
 	//Set background paint
 		backgroundPaint = new Paint();
 		backgroundPaint.setColor(Color.WHITE);
@@ -74,30 +87,34 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 //-----------------------------------------------------------------------
 	public void newGame() {
 		initializeObjects();
+		seconds = System.currentTimeMillis()/1000;
 		score = 0;
 
 	}
 
 	private void updatePositions(double elapsedTime) {
-		double interval = elapsedTime / 1000.0;
+		if (!dialogIsDisplayed) {
+			double interval = elapsedTime / 10000.0;
 
-		if(!ball.isValid() && !dialogIsDisplayed) {
-			showGameOverDialog();
+			if(!ball.isValid() && !dialogIsDisplayed) {
+				showGameOverDialog();
 
-		} else if(ball.isTouchingPaddle(paddle) || ball.isTouchingWall()) {
-			score++;
-			ball.bounce(interval);
+			} else if(ball.isTouching(paddle) != 0) {
+				score++;
+				ball.bounce(ball.isTouching(paddle));
+				soundPool.play(soundMap.get(0), 1, 1, 1, 0, 1f);
 
-		} else {
-			ball.update(interval);
-		}
+			} else {
+				ball.move();
+			}
 
-		seconds++;
+			if(System.currentTimeMillis()/1000 - seconds >= 20) {
+				paddle.decrease();
+				ball.speedUp();
 
-		if(seconds == 20) {
-			paddle.decrease();
-			ball.speedUp();
-			seconds = 0;
+				seconds = System.currentTimeMillis()/1000;
+
+			}
 		}
 
 	}
@@ -111,9 +128,27 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 
 
 	public void initializeObjects() {
+		getHighScore();
+		screenWidth = super.getWidth();
+		screenHeight = super.getHeight();
+
 		ball = new Ball(screenWidth, screenHeight);
 		paddle = new Paddle(screenWidth, screenHeight);
 
+	}
+
+	public int getHighScore() {
+		SharedPreferences sp = context.getSharedPreferences("your_prefs", Activity.MODE_PRIVATE);
+		currentHighScore = sp.getInt("highScore", -1);
+
+		return currentHighScore;
+	}
+
+	public void setHighScore() {
+		SharedPreferences sp = context.getSharedPreferences("your_prefs", Activity.MODE_PRIVATE);
+		SharedPreferences.Editor editor = sp.edit();
+		editor.putInt("highScore", score);
+		editor.commit();
 	}
 
 //-----------------------------------------------------------------------
@@ -145,7 +180,8 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 
 	@Override
 	public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-
+		screenWidth = width;
+		screenHeight = height;
 	}
 
 	// called when the surface is destroyed
@@ -228,7 +264,9 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 					{
 						long currentTime = System.currentTimeMillis();
 						double elapsedTimeMS = currentTime - previousFrameTime;
+
 						totalElapsedTime += elapsedTimeMS / 1000.0;
+
 						updatePositions(elapsedTimeMS); // update game state
 						drawGameElements(canvas); // draw using the canvas
 						previousFrameTime = currentTime; // update previous time
@@ -253,8 +291,9 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 
 	private void showGameOverDialog()
 	{
-		//TODO: set new high record if applicable.
-
+		if(currentHighScore < score) {
+			setHighScore();
+		}
 
 		// DialogFragment to display quiz stats and start new quiz
 		final DialogFragment gameResult = new DialogFragment() {
@@ -282,7 +321,10 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 				builder.setNegativeButton("Quit", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						activity.finish();
+						//BAThread.destroy();
+
+						Intent i = new Intent(context, MainActivity.class);
+						startActivity(i);
 					}
 				});
 
@@ -295,6 +337,7 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 				new Runnable() {
 					public void run() {
 						dialogIsDisplayed = true;
+						//TODO: BAThread.setRunning(false);
 						gameResult.show(activity.getFragmentManager(), "results");
 					}
 				} // end Runnable

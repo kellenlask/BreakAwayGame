@@ -18,10 +18,10 @@ public class Paddle {
 	protected Point leftSide;
 	protected Point rightSide;
 	protected Paint paint;
+	protected int lineLength;
 
 	//Relative Values
 	protected int Ycoord;
-	protected int lineWidth;
 	protected int screenWidth;
 
 //-----------------------------------------------------------------------
@@ -34,14 +34,13 @@ public class Paddle {
 
 		//Set Relative Values
 		Ycoord = screenHeight * 7 / 8;
+		lineLength = screenWidth * 1 / 3;
 
-
-		leftSide = new Point(screenWidth / 3, Ycoord);
-		rightSide = new Point(screenWidth * 2 / 3, Ycoord);
-		lineWidth = screenHeight / 16;
+		leftSide = new Point(0, Ycoord);
+		rightSide = new Point(lineLength, Ycoord);
 
 		paint = new Paint();
-		paint.setStrokeWidth(lineWidth);
+		paint.setStrokeWidth(screenWidth * 1 / 36);
 		paint.setColor(Color.BLUE);
 	}
 
@@ -52,25 +51,19 @@ public class Paddle {
 //		Accessors
 //
 //-----------------------------------------------------------------------
-	public Point getLeftSide() {
-		return leftSide;
-	}
-
-	public Point getRightSide() {
-		return rightSide;
-	}
 
 	public void draw(Canvas canvas) {
 		canvas.drawLine(leftSide.x, leftSide.y, rightSide.x, rightSide.y, paint);
 
 	}
 
-	public int getLineWidth() {
-		return lineWidth;
+	public int getLineLength() {
+		lineLength = rightSide.x - leftSide.x;
+		return lineLength;
 	}
 
-	public Point getCenter() {
-		return new Point(rightSide.x - leftSide.x, rightSide.y);
+	public int getStrokeWidth() {
+		return screenWidth * 2 / 36;
 	}
 
 //-----------------------------------------------------------------------
@@ -78,39 +71,35 @@ public class Paddle {
 //		Mutators
 //
 //-----------------------------------------------------------------------
-	public void moveLeft() {
-		int amount = screenWidth / 32;
 
-		if(leftSide.x - amount > 0) {
-			leftSide.x -= amount;
-			rightSide.x -= amount;
+	public void setCenter(Point p) {
+		int lineWidth = getLineLength() / 2;
+
+		if(p.x - lineWidth < 0) {
+			leftSide.x = 0;
+			rightSide.x = 2 * lineWidth;
+
+		} else if(p.x + lineWidth >= screenWidth) {
+			rightSide.x = screenWidth;
+			leftSide.x = screenWidth - 2 * lineWidth;
+
+		} else {
+			leftSide.x = p.x - lineWidth;
+			rightSide.x = p.x + lineWidth;
 		}
-	}
 
-	public void moveRight() {
-		int amount = screenWidth / 32;
 
-		if(rightSide.x + amount < screenWidth) {
-			leftSide.x += amount;
-			rightSide.x += amount;
-		}
 	}
 
 	public void decrease() {
-		if(getLineWidth() > (screenWidth * 1 / 6)) {
-			leftSide.x -= 5;
-			rightSide.x -= 5;
+		if(getLineLength() > (screenWidth * 1 / 6)) {
+			leftSide.x += 5;
 		}
 	}
 
 	public void update(MotionEvent event) {
 		Point touchPoint = new Point((int) event.getX(), (int) event.getY());
-		Point center = getCenter();
 
-		if(touchPoint.x < center.x) {
-			moveLeft();
-		} else if(touchPoint.x > center.x) {
-			moveRight();
-		}
+		setCenter(touchPoint);
 	}
 }
