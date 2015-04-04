@@ -16,9 +16,9 @@ public class Ball {
 	protected int acceleration;
 	protected int speed;
 	protected Point position;
-	protected boolean goingUp;
-	protected boolean goingLeft;
 	protected Paint paint;
+	protected int xVelocity;
+	protected int yVelocity;
 
 	//Dimensions
 	protected int screenHeight;
@@ -31,18 +31,28 @@ public class Ball {
 //		Constructors
 //
 //-------------------------------------------------------
-	public Ball(int screenWidth, int screenHeight) {
-		setGoingUp(false);
+	public Ball(int w, int h) {
+		yVelocity = 1;
+		xVelocity = -1;
+
 		paint = new Paint();
 
-		this.screenHeight = screenHeight;
-		this.screenWidth = screenWidth;
+		this.screenHeight = h;
+		this.screenWidth = w;
 
 		//Set relative values
-		acceleration = screenWidth * 3 / 2;
-		radius = screenWidth / 36;
+		acceleration = w * 3 / 2;
+		radius = w / 36;
 
 		//Randomly generate a good starting position
+		/*Random r = new Random();
+		if(w != 0) {
+			position = new Point(r.nextInt(w - 200) + 50, 50);
+		} else {
+			position = new Point(r.nextInt(700) + 20, 50);
+		}*/
+
+		position = new Point(500, 500);
 
 	}
 
@@ -52,7 +62,7 @@ public class Ball {
 //
 //-------------------------------------------------------
 
-	public int getACCELERATION() {
+	public int getAcceleration() {
 		return acceleration;
 	}
 
@@ -64,12 +74,12 @@ public class Ball {
 		return position;
 	}
 
-	public boolean isGoingUp() {
-		return goingUp;
+	public int getXVelocity() {
+		return xVelocity;
 	}
 
-	public boolean isGoingLeft() {
-		return goingLeft;
+	public int getYVelocity() {
+		return yVelocity;
 	}
 
 	public Paint getPaint() {
@@ -82,20 +92,18 @@ public class Ball {
 	}
 
 	public boolean isValid() {
-		return position.y < screenHeight;
+		return position.y < screenHeight && position.y > 0 && position.x > 0 && position.x < screenWidth;
 	}
 
 	public boolean isTouchingWall() {
-		return 0 < position.x + radius
-				&& screenWidth > position.x + radius
-				&& 0 < position.y + radius;
+		return (1 > position.x - radius) || (screenWidth - 1 < position.x + radius) || (1 > position.y - radius);
 	}
 
 	public boolean isTouchingPaddle(Paddle p) {
 		Point a = new Point(p.getLeftSide().x, p.getLeftSide().y - p.getLineWidth() / 2);
 		Point c = new Point(p.getRightSide().x, p.getLeftSide().y + p.getLineWidth() / 2);
 
-		if(position.y + radius < a.y || position.y - radius > c.y) {
+		if(position.y + radius < a.y) {
 			return false;
 
 		} else {
@@ -118,16 +126,46 @@ public class Ball {
 		this.position = position;
 	}
 
-	public void setGoingUp(boolean goingUp) {
-		this.goingUp = goingUp;
-	}
-
-	public void setGoingLeft(boolean goingLeft) {
-		this.goingLeft = goingLeft;
-	}
-
 	public void setPaint(Paint paint) {
 		this.paint = paint;
+	}
+
+	public void setXVelocity(int velocity) {
+		xVelocity = velocity;
+	}
+
+	public void setYVelocity(int velocity) {
+		yVelocity = velocity;
+	}
+
+	public void speedUp() {
+		xVelocity++;
+		yVelocity++;
+	}
+
+	public void bounce(double interval) {
+		if(position.y <= 0) { //Top
+			position.y = radius + 1;
+			yVelocity *= -1;
+
+		} else if(position.x <= 0) { //Left
+			position.x = radius + 1;
+			xVelocity *= -1;
+
+		} else if(position.x >= screenWidth) { //Right
+			position.x = screenWidth - radius;
+			xVelocity *= -1;
+
+		} else { //Paddle
+			yVelocity *= -1;
+		}
+
+		update(interval);
+	}
+
+	public void update(double interval) {
+		position.x += xVelocity;
+		position.y += yVelocity;
 	}
 
 } //End Class
