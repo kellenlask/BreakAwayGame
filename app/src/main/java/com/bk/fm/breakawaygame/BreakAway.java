@@ -2,11 +2,14 @@ package com.bk.fm.breakawaygame;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -33,6 +36,7 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 	//Game State
 	private int score;
 	private double totalElapsedTime;
+	private int seconds;
 
 	//Objects
 	private Activity activity;
@@ -54,8 +58,8 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 	// register SurfaceHolder.Callback listener
 		getHolder().addCallback(this);
 
-
 	//Set background paint
+		backgroundPaint = new Paint();
 		backgroundPaint.setColor(Color.WHITE);
 
 	//Start Game
@@ -70,16 +74,31 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 //-----------------------------------------------------------------------
 	public void newGame() {
 		initializeObjects();
-
 		score = 0;
 
 	}
 
 	private void updatePositions(double elapsedTime) {
-		if(!ball.isValid()) {
+		double interval = elapsedTime / 1000.0;
+
+		if(!ball.isValid() && !dialogIsDisplayed) {
 			showGameOverDialog();
+
+		} else if(ball.isTouchingPaddle(paddle) || ball.isTouchingWall()) {
+			score++;
+			ball.bounce(interval);
+
+		} else {
+			ball.update(interval);
 		}
 
+		seconds++;
+
+		if(seconds == 20) {
+			paddle.decrease();
+			ball.speedUp();
+			seconds = 0;
+		}
 
 	}
 
@@ -92,10 +111,8 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 
 
 	public void initializeObjects() {
-
 		ball = new Ball(screenWidth, screenHeight);
 		paddle = new Paddle(screenWidth, screenHeight);
-
 
 	}
 
@@ -143,7 +160,7 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 		{
 			try
 			{
-				BAThread.join(); // wait for cannonThread to finish
+				BAThread.join(); // wait for thread to finish
 				retry = false;
 			}
 			catch (InterruptedException e)
@@ -161,10 +178,8 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 		int action = e.getAction();
 
 		// the user user touched the screen or dragged along the screen
-		if (action == MotionEvent.ACTION_DOWN ||
-				action == MotionEvent.ACTION_MOVE)
-		{
-			//fireCannonball(e); // fire the cannonball toward the touch point
+		if (action == MotionEvent.ACTION_MOVE) {
+			paddle.update(e);
 		}
 
 		return true;
@@ -238,33 +253,52 @@ public class BreakAway extends SurfaceView implements SurfaceHolder.Callback {
 
 	private void showGameOverDialog()
 	{
-		//TODO: set new high record is applicable.
+		//TODO: set new high record if applicable.
 
-		dialogIsDisplayed = true;
 
-		AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-		builder.setTitle("Game Over");
-
-		// display number of shots fired and total time elapsed
-		builder.setMessage("Your Score: " + score + ".");
-
-		// Set up the buttons
-		builder.setPositiveButton("New Game", new DialogInterface.OnClickListener() {
+		// DialogFragment to display quiz stats and start new quiz
+		final DialogFragment gameResult = new DialogFragment() {
+			// create an AlertDialog and return it
 			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialogIsDisplayed = false;
-				newGame(); // set up and start a new game
-			}
-		});
-		builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				activity.finish();
-			}
-		});
+			public Dialog onCreateDialog(Bundle bundle) {
+				// create dialog displaying String resource for messageId
+				AlertDialog.Builder builder
+						= new AlertDialog.Builder(getActivity());
+				builder.setTitle("Game Over");
 
-		//Show the dialog
-		builder.show();
+				// display number of shots fired and total time elapsed
+				builder.setMessage("Score: " + score);
+				builder.setPositiveButton("New Game",
+						new DialogInterface.OnClickListener() {
+							// called when "Reset Game" Button is pressed
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								dialogIsDisplayed = false;
+								newGame(); // set up and start a new game
+							}
+						} // end anonymous inner class
+				); // end call to setPositiveButton
+
+				builder.setNegativeButton("Quit", new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						activity.finish();
+					}
+				});
+
+				return builder.create(); // return the AlertDialog
+			} // end method onCreateDialog
+		}; // end DialogFragment anonymous inner class
+
+		// in GUI thread, use FragmentManager to display the DialogFragment
+		activity.runOnUiThread(
+				new Runnable() {
+					public void run() {
+						dialogIsDisplayed = true;
+						gameResult.show(activity.getFragmentManager(), "results");
+					}
+				} // end Runnable
+		); // end call to runOnUiThread
 
 	} // end method showGameOverDialog
 
