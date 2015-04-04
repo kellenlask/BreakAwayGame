@@ -34,6 +34,16 @@ public class MainActivity extends ActionBarActivity {
 
 	} //End onCreate
 
+	@Override
+	protected void onPause() {
+
+	}
+
+	@Override
+	public void onDestroy() {
+
+	}
+
 //---------------------------------------------------
 //
 //		Logistical Methods
@@ -43,7 +53,7 @@ public class MainActivity extends ActionBarActivity {
 		playButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(getBaseContext(), BreakActivity.class);
+				Intent i = new Intent(getBaseContext(), GameActivity.class);
 				startActivity(i);
 			}
 		});

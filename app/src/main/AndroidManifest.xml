@@ -17,8 +17,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BreakActivity"
-            android:label="@string/title_activity_break" >
+            android:name=".GameActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_game"
+            android:theme="@style/FullscreenTheme" >
         </activity>
     </application>
 
